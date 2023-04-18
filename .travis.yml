@@ -11,16 +11,16 @@ script:
 
 after_success:
   - docker build -t robaczek/multi-client ./client/
-  - docker build -t robaczek/multi-nginx ./nginx/
-  - docker build -t robaczek/multi-server ./server/
-  - docker build -t robaczek/multi-worker ./worker/
+ # - docker build -t robaczek/multi-nginx ./nginx/
+ # - docker build -t robaczek/multi-server ./server/
+ # - docker build -t robaczek/multi-worker ./worker/
 # Log in to docker CLI
   - echo "Test secrets"
   - echo "$TEST_SECRET"
   - echo "End test"
-  - echo "$DOCKER_PASSWORD" | docker login --username robaczek --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u robaczek --password-stdin
 # Take images and push to docker hub  
   - docker push robaczek/multi-client
-  - docker push robaczek/multi-nginx 
-  - docker push robaczek/multi-server 
-  - docker push robaczek/multi-worker 
+#  - docker push robaczek/multi-nginx 
+#  - docker push robaczek/multi-server 
+#  - docker push robaczek/multi-worker 
