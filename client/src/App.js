@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <header className="App-header">
     
-          <h1 className='App-title'> Welocome to React</h1>
+          <h1 className='App-title'> Fibonaci</h1>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
         </header>
